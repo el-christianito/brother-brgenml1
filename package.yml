@@ -1,0 +1,47 @@
+name       : brother-brgenml1
+version    : 3.1.0
+release    : 1
+source     :
+    - https://download.brother.com/welcome/dlf101126/brgenml1cupswrapper-3.1.0-1.i386.rpm : 397cb2d91e0748f4c0498d831647efbc62af9e02f576ad52dc520bcac876f795
+    - https://download.brother.com/welcome/dlf101124/brgenml1lpr-3.1.0-1.i386.rpm : 18823eb345e4e4391d7a6a3a1d442a96b2224e12a0600542f0d3d700cf158706
+license    :
+    - Distributable
+    - GPL-2.0-or-later
+component  : drivers.printer
+extract    : no
+strip      : no
+summary    : Generic printer driver for various Brother printers.
+description: |
+    Generic printer driver for various Brother printers: 
+    DCP-7055, DCP-7055R, DCP-7055W, DCP-7055WR, DCP-7057, DCP-7057R, DCP-7057WR, DCP-7060D, DCP-7060DR, DCP-7065DN, 
+    DCP-7065DNR, DCP-7070DW, DCP-7070DWR, DCP-8070D, DCP-8085DN, DCP-8110DN, DCP-8250DN, DCP-L2500D, DCP-L2500DR, 
+    DCP-L2520DW, DCP-L2520DWR, DCP-L2540DN, DCP-L2540DNR, DCP-L2560DW, DCP-L2560DWR, HL-2130, HL-2130R, HL-2132, 
+    HL-2132R, HL-2135W, HL-2240, HL-2240D, HL-2240DR, HL-2240R, HL-2250DN, HL-2250DNR, HL-2270DW, HL-5340D, HL-5350DN, 
+    HL-5350DNLT, HL-5370DW, HL-5380DN, HL-5440D, HL-5450DN, HL-5450DNT, HL-5470DW, HL-6180DW, HL-6180DWT, HL-L2300D, 
+    HL-L2300DR, HL-L2340DW, HL-L2340DWR, HL-L2360DN, HL-L2360DNR, HL-L2365DW, HL-L2365DWR, MFC-7360N, MFC-7360NR, 
+    MFC-7460DN, MFC-7860DW, MFC-7860DWR, MFC-8370DN, MFC-8380DN, MFC-8510DN, MFC-8520DN, MFC-8880DN, MFC-8890DW, 
+    MFC-8950DW, MFC-8950DWT, MFC-L2700DN, MFC-L2700DNR, MFC-L2700DW, MFC-L2700DWR, MFC-L2720DW, MFC-L2720DWR, MFC-L2740DW, MFC-L2740DWR
+    
+    Note that some portions are binary and provided for hardware enablement so may not meet typical Solus packaging standards for paths.
+builddeps  :
+    - rpm
+rundeps    :
+    - glibc-32bit
+    - ghostscript
+    - psutils
+setup      : |
+    # Extract rpms
+    for i in $sources/*.rpm; do
+        rpm2cpio ${i} | cpio -idmv
+    done
+install    : |
+    install -d -m 00755 $installdir
+    # Install rpm files
+    mv opt $installdir/
+
+    # Install required cups files
+    install -d -m 00755 $installdir/usr/share/cups/model
+    install -d -m 00755 $installdir/%libdir%/cups/filter
+    ln -s /opt/brother/Printers/BrGenML1/cupswrapper/brother-BrGenML1-cups-en.ppd $installdir/usr/share/cups/model/brother-BrGenML1-cups-en.ppd
+    ln -s /opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1 $installdir/%libdir%/cups/filter/brother_lpdwrapper_BrGenML1
+    ln -s /opt/brother/Printers/BrGenML1/lpd/filter_BrGenML1 $installdir/%libdir%/cups/filter/filter_BrGenML1
