@@ -1,0 +1,67 @@
+<PISI>
+    <Source>
+        <Name>brother-brgenml1</Name>
+        <Packager>
+            <Name>El Christianito</Name>
+            <Email>el-christianito@mail.ch</Email>
+        </Packager>
+        <License>Distributable</License>
+        <License>GPL-2.0-or-later</License>
+        <PartOf>drivers.printer</PartOf>
+        <Summary xml:lang="en">Generic printer driver for various Brother printers.</Summary>
+        <Description xml:lang="en">Generic printer driver for various Brother printers: 
+DCP-7055, DCP-7055R, DCP-7055W, DCP-7055WR, DCP-7057, DCP-7057R, DCP-7057WR, DCP-7060D, DCP-7060DR, DCP-7065DN, 
+DCP-7065DNR, DCP-7070DW, DCP-7070DWR, DCP-8070D, DCP-8085DN, DCP-8110DN, DCP-8250DN, DCP-L2500D, DCP-L2500DR, 
+DCP-L2520DW, DCP-L2520DWR, DCP-L2540DN, DCP-L2540DNR, DCP-L2560DW, DCP-L2560DWR, HL-2130, HL-2130R, HL-2132, 
+HL-2132R, HL-2135W, HL-2240, HL-2240D, HL-2240DR, HL-2240R, HL-2250DN, HL-2250DNR, HL-2270DW, HL-5340D, HL-5350DN, 
+HL-5350DNLT, HL-5370DW, HL-5380DN, HL-5440D, HL-5450DN, HL-5450DNT, HL-5470DW, HL-6180DW, HL-6180DWT, HL-L2300D, 
+HL-L2300DR, HL-L2340DW, HL-L2340DWR, HL-L2360DN, HL-L2360DNR, HL-L2365DW, HL-L2365DWR, MFC-7360N, MFC-7360NR, 
+MFC-7460DN, MFC-7860DW, MFC-7860DWR, MFC-8370DN, MFC-8380DN, MFC-8510DN, MFC-8520DN, MFC-8880DN, MFC-8890DW, 
+MFC-8950DW, MFC-8950DWT, MFC-L2700DN, MFC-L2700DNR, MFC-L2700DW, MFC-L2700DWR, MFC-L2720DW, MFC-L2720DWR, MFC-L2740DW, MFC-L2740DWR
+
+Note that some portions are binary and provided for hardware enablement so may not meet typical Solus packaging standards for paths.
+</Description>
+        <Archive type="binary" sha1sum="79eb0752a961b8e0d15c77d298c97498fbc89c5a">https://getsol.us/sources/README.Solus</Archive>
+    </Source>
+    <Package>
+        <Name>brother-brgenml1</Name>
+        <Summary xml:lang="en">Generic printer driver for various Brother printers.</Summary>
+        <Description xml:lang="en">Generic printer driver for various Brother printers: 
+DCP-7055, DCP-7055R, DCP-7055W, DCP-7055WR, DCP-7057, DCP-7057R, DCP-7057WR, DCP-7060D, DCP-7060DR, DCP-7065DN, 
+DCP-7065DNR, DCP-7070DW, DCP-7070DWR, DCP-8070D, DCP-8085DN, DCP-8110DN, DCP-8250DN, DCP-L2500D, DCP-L2500DR, 
+DCP-L2520DW, DCP-L2520DWR, DCP-L2540DN, DCP-L2540DNR, DCP-L2560DW, DCP-L2560DWR, HL-2130, HL-2130R, HL-2132, 
+HL-2132R, HL-2135W, HL-2240, HL-2240D, HL-2240DR, HL-2240R, HL-2250DN, HL-2250DNR, HL-2270DW, HL-5340D, HL-5350DN, 
+HL-5350DNLT, HL-5370DW, HL-5380DN, HL-5440D, HL-5450DN, HL-5450DNT, HL-5470DW, HL-6180DW, HL-6180DWT, HL-L2300D, 
+HL-L2300DR, HL-L2340DW, HL-L2340DWR, HL-L2360DN, HL-L2360DNR, HL-L2365DW, HL-L2365DWR, MFC-7360N, MFC-7360NR, 
+MFC-7460DN, MFC-7860DW, MFC-7860DWR, MFC-8370DN, MFC-8380DN, MFC-8510DN, MFC-8520DN, MFC-8880DN, MFC-8890DW, 
+MFC-8950DW, MFC-8950DWT, MFC-L2700DN, MFC-L2700DNR, MFC-L2700DW, MFC-L2700DWR, MFC-L2720DW, MFC-L2720DWR, MFC-L2740DW, MFC-L2740DWR
+
+Note that some portions are binary and provided for hardware enablement so may not meet typical Solus packaging standards for paths.
+</Description>
+        <PartOf>drivers.printer</PartOf>
+        <Files>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/cupswrapper/brother-BrGenML1-cups-en.ppd</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/cupswrapper/brother_lpdwrapper_BrGenML1</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/cupswrapper/paperconfigml1</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/inf/brBrGenML1func</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/inf/brBrGenML1rc</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/inf/braddprinter</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/inf/setupPrintcap</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/lpd/brprintconflsr3</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/lpd/filter_BrGenML1</Path>
+            <Path fileType="data">/opt/brother/Printers/BrGenML1/lpd/rawtobr3</Path>
+            <Path fileType="library">/usr/lib64/cups/filter/brother_lpdwrapper_BrGenML1</Path>
+            <Path fileType="library">/usr/lib64/cups/filter/filter_BrGenML1</Path>
+            <Path fileType="data">/usr/share/cups/model/brother-BrGenML1-cups-en.ppd</Path>
+        </Files>
+    </Package>
+    <History>
+        <Update release="1">
+            <Date>2020-05-05</Date>
+            <Version>3.1.0</Version>
+            <Comment>Packaging update</Comment>
+            <Name>El Christianito</Name>
+            <Email>el-christianito@mail.ch</Email>
+        </Update>
+    </History>
+</PISI>
